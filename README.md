@@ -8,8 +8,8 @@ To run this lab, you will need:
 ## LAB 1 - Build and run your first masking set
 1. Execute the script DropAndCreateDmDatabase.sql on your SQL Server instance. This will drop and recreate a sample databas called DMDatabase. ***(WARNING: If you already have a database called DMDatabase, this script will drop your existing database! If you value that database, use a different SQL Server instance to run these labs!)*** Examine the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Consider which data is sensitive and which columns to mask.
  This script is rerunnable, so you can run it as frequently as you like to 
-2. Open Data MAsker for SQL Server and create a new Masking Set.
-3. Connect to SQL Server, and the dbo.DMDatabase database.
+2. Open Data Masker for SQL Server and create a new Masking Set.
+3. Connect to SQL Server, and the DMDatabase database.
 4. Go to the "Tables" tab. Expand the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Set appropriate Sensitivity labels for each column in each of the two tables.
 5. Select all the sensitive columns in the DM_CUSTOMER table (SHIFT or CONTROL + left-click), select Add Rule / Susbstitution.
 6. For each column, select an appropriate data set. Remember that for address data you can use a correlated data set.
@@ -26,6 +26,6 @@ Hopefully, the masking set we create in LAB 1 masked the original data sufficien
 To solve this issues, complete the following tasks:
 1. Ensure that the Substitution rule for the DM_CUSTOMER table uses a female names data set for first names, thn adda second Substitution rule, dependent on the first, that goes back over the first name column and uses a male dataset, with an appropriate WHERE clause.
 2. Create a Row Internal rule to generate truthy email addresses, by incorporating the data in the name columns. Ensure that this rule runs *after* any rules that mask the name column have completed.
-3. Create a Table-to-Table rule to sync the data in the DM_CUSTOMER table with the DM_CUSTOEMR_NOTES table. Ensure that this rule is set to run after the data in the DM_CUSTOMER table has already been completely masked.
+3. Create a Table-to-Table rule to sync the data in the DM_CUSTOMER table with the DM_CUSTOEMR_NOTES table. Ensure that this rule is set to run after the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables have already been completely masked.
 4. Re-run your masking set, and review the data in the tables.
 5. Observe ExampleMaskSet.DMSMaskSet. This is an example masking set that appropriately masks the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Compare it with your own masking set, and consider any differences.
