@@ -6,7 +6,7 @@ To run this lab, you will need:
 2. Data Masker for SQL Server by Redgate. (A 14 day free trial is available here: https://www.red-gate.com/products/data-masker/. If you need a trial extension, contact sales@red-gate.com.) 
 
 ## LAB 1 - Build and run your first masking set
-1. Execute the script DropAndCreateDmDatabase.sql on your SQL Server instance. This will drop and recreate a sample database called DMDatabase. ***(WARNING: If you already have a database called DMDatabase, this script will drop your existing database! If you value that database, use a different SQL Server instance to run these labs!)*** Examine the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Consider which data is sensitive and which columns to mask. This script is rerunnable, so you can run it as frequently as you like to reset the data in thedatabase.
+1. Execute the script DropAndCreateDmDatabase.sql on your SQL Server instance. This will drop and recreate a sample database called DMDatabase. ***(WARNING: If you already have a database called DMDatabase, this script will drop your existing database! If you value that database, use a different SQL Server instance to run these labs!)*** Examine the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Consider which data is sensitive and which columns to mask. This script is rerunnable, so you can run it as frequently as you like to reset the data.
 2. Open Data Masker for SQL Server and create a new Masking Set.
 3. Connect to SQL Server, and the DMDatabase database.
 4. Go to the "Tables" tab. Expand the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Set appropriate Sensitivity labels for each column in each of the two tables.
