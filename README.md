@@ -23,8 +23,8 @@ Hopefully, the masking set we create in LAB 1 masked the original data sufficien
 3. In the original data, the names in the DM_CUSTOMER and DM_CUSTOMER_NOTES matched, when joining on the customer_id column. (Re-run DropAndCreateDmDatabase.sql to verify this.) Do the names still match after running your masking set?
 
 To solve this issues, complete the following tasks:
-1. Ensure that the Substitution rule for the DM_CUSTOMER table uses a female names data set for first names, thn adda second Substitution rule, dependent on the first, that goes back over the first name column and uses a male dataset, with an appropriate WHERE clause.
-2. Create a Row Internal rule to generate truthy email addresses, by incorporating the data in the name columns. Ensure that this rule runs *after* any rules that mask the name column have completed.
+1. Ensure that the Substitution rule for the DM_CUSTOMER table uses a female names data set for first names, then add a second Substitution rule, dependent on the first, that goes back over the first name column and uses a male data set, with an appropriate WHERE clause.
+2. Create a Row-Internal rule to generate truthy email addresses, by incorporating the data in the name columns. Ensure that this rule runs *after* any rules that mask the name columns have completed.
 3. Create a Table-to-Table rule to sync the data in the DM_CUSTOMER table with the DM_CUSTOEMR_NOTES table. Ensure that this rule is set to run after the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables have already been completely masked.
 4. Re-run your masking set, and review the data in the tables.
 5. Observe ExampleMaskSet.DMSMaskSet. This is an example masking set that appropriately masks the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Compare it with your own masking set, and consider any differences.
