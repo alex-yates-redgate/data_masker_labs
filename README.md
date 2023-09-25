@@ -19,7 +19,7 @@ To run this lab, you will need:
 ## LAB 2 - Making a data set more "Truthy"
 Hopefully, the masking set we create in LAB 1 masked the original data sufficiently well to meet our compliance requirements. However, it may not feel very "truthy". Consider the following questions:
 1. Are all the names in the DM_CUSTOMER table gender appropriate?
-2. Do the email addresses in the DM_CUSTOMER table reflect the names of the cusomters?
+2. Do the email addresses in the DM_CUSTOMER table reflect the names of the customers?
 3. In the original data, the names in the DM_CUSTOMER and DM_CUSTOMER_NOTES matched, when joining on the customer_id column. (Re-run DropAndCreateDmDatabase.sql to verify this.) Do the names still match after running your masking set?
 
 To solve this issues, complete the following tasks:
