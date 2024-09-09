@@ -2,8 +2,9 @@ USE [master]
 GO
 
 -- If exists, delete
-ALTER DATABASE [DMDatabase] SET single_user with rollback immediate
+
 IF EXISTS (SELECT name FROM sys.databases WHERE name = N'DMDatabase')
+	ALTER DATABASE [DMDatabase] SET single_user with rollback immediate
     DROP DATABASE [DMDatabase]
 GO
 
