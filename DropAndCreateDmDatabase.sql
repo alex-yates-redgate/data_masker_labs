@@ -4,8 +4,11 @@ GO
 -- If exists, delete
 
 IF EXISTS (SELECT name FROM sys.databases WHERE name = N'DMDatabase')
-	ALTER DATABASE [DMDatabase] SET single_user with rollback immediate
-    DROP DATABASE [DMDatabase]
+	ALTER DATABASE [DMDatabase] SET single_user with rollback IMMEDIATE
+	GO
+
+IF EXISTS (SELECT name FROM sys.databases WHERE name = N'DMDatabase')
+	DROP DATABASE [DMDatabase]
 GO
 
 -- Create database
