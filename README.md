@@ -14,7 +14,8 @@ To run this lab, you will need:
 6. For each column, select an appropriate data set. Remember that for address data you can use a correlated data set.
 7. Repeat steps 4-6 for the DM_CUSTOMER_NOTES table.
 8. Click "Run Masking Set". Once completed, take another look at the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. You can reset the data by rerunning DropAndCreateDmDatabase.sql, and you can rerun the masking set by clicking the "Run Masking Set" button in the Data Masker for SQL Server UI.
-9. Optional: Review the command line documentation, and attempt to run your maskign set via the command line: https://documentation.red-gate.com/dms/data-masker-help/general-topics/about-command-line-automation
+9. Observe ExampleMaskSet01.DMSMaskSet. This is an example masking set that appropriately masks the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Compare it with your own masking set, and consider any differences.
+10. Optional: Review the command line documentation, and attempt to run your masking set via the command line: https://documentation.red-gate.com/dms/data-masker-help/general-topics/about-command-line-automation
 
 ## LAB 2 - Making a data set more "Truthy"
 Hopefully, the masking set we create in LAB 1 masked the original data sufficiently well to meet our compliance requirements. However, it may not feel very "truthy". Consider the following questions:
@@ -27,4 +28,5 @@ To solve this issues, complete the following tasks:
 2. Create a Row-Internal rule to generate truthy email addresses, by incorporating the data in the name columns. Ensure that this rule runs *after* any rules that mask the name columns have completed.
 3. Create a Table-to-Table rule to sync the data in the DM_CUSTOMER table with the DM_CUSTOEMR_NOTES table. Ensure that this rule is set to run after the data in the DM_CUSTOMER and DM_CUSTOMER_NOTES tables have already been completely masked.
 4. Re-run your masking set, and review the data in the tables.
-5. Observe ExampleMaskSet.DMSMaskSet. This is an example masking set that appropriately masks the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Compare it with your own masking set, and consider any differences.
+5. Observe ExampleMaskSet02.DMSMaskSet. This is an example masking set that appropriately masks the DM_CUSTOMER and DM_CUSTOMER_NOTES tables. Compare it with your own masking set, and consider any differences.
+6. Optional: Review the command line documentation, and attempt to run your masking set via the command line: https://documentation.red-gate.com/dms/data-masker-help/general-topics/about-command-line-automation
