@@ -35,8 +35,8 @@ PRINT N'Creating [dbo].[DM_INVOICE_LINE]'
 GO
 CREATE TABLE [dbo].[DM_INVOICE_LINE]
 (
-[invoice_number] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
-[inventory_item_id] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
+[invoice_number] [varchar] (10) NOT NULL,
+[inventory_item_id] [varchar] (10) NOT NULL,
 [invoice_line_quantity] [int] NULL,
 [invoice_line_sale_price] [decimal] (10, 2) NULL
 )
@@ -54,8 +54,8 @@ GO
 CREATE TABLE [dbo].[DM_INVOICE_LINE_HISTORY]
 (
 [identCol] [int] NOT NULL IDENTITY(1, 1),
-[invoice_number] [varchar] (6) COLLATE Latin1_General_CI_AS NOT NULL,
-[item_id] [varchar] (6) COLLATE Latin1_General_CI_AS NOT NULL,
+[invoice_number] [varchar] (6) NOT NULL,
+[item_id] [varchar] (6) NOT NULL,
 [quantity] [int] NULL
 )
 GO
@@ -93,14 +93,14 @@ CREATE TABLE [dbo].[DM_EMPLOYEE]
 (
 [person_id] [int] NOT NULL,
 [assignment_id] [int] NOT NULL,
-[emp_id] [varchar] (50) COLLATE Latin1_General_CI_AS NULL,
-[first_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL,
-[last_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL,
-[full_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL,
+[emp_id] [varchar] (50) NULL,
+[first_name] [varchar] (40) NULL,
+[last_name] [varchar] (40) NULL,
+[full_name] [varchar] (40) NULL,
 [birth_date] [datetime] NULL,
-[gender] [varchar] (1) COLLATE Latin1_General_CI_AS NULL,
-[title] [varchar] (10) COLLATE Latin1_General_CI_AS NULL,
-[emp_data] [varchar] (100) COLLATE Latin1_General_CI_AS NULL
+[gender] [varchar] (1) NULL,
+[title] [varchar] (10) NULL,
+[emp_data] [varchar] (100) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -118,10 +118,10 @@ CREATE TABLE [dbo].[DM_EMP_AUDIT]
 [identCol] [int] NOT NULL IDENTITY(1, 1),
 [person_id] [int] NOT NULL,
 [assignment_id] [int] NOT NULL,
-[emp_id] [varchar] (10) COLLATE Latin1_General_CI_AS NULL,
-[first_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL,
-[last_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL,
-[full_name] [varchar] (40) COLLATE Latin1_General_CI_AS NULL
+[emp_id] [varchar] (10) NULL,
+[first_name] [varchar] (40) NULL,
+[last_name] [varchar] (40) NULL,
+[full_name] [varchar] (40) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -160,19 +160,19 @@ PRINT N'Creating [dbo].[DM_CUSTOMER]'
 GO
 CREATE TABLE [dbo].[DM_CUSTOMER]
 (
-[customer_id] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
-[customer_firstname] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_lastname] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_gender] [varchar] (1) COLLATE Latin1_General_CI_AS NULL,
-[customer_company_name] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_street_address] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_region] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_country] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_email] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_telephone] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_zipcode] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[credit_card_type_id] [varchar] (2) COLLATE Latin1_General_CI_AS NULL,
-[customer_credit_card_number] [varchar] (60) COLLATE Latin1_General_CI_AS NULL
+[customer_id] [varchar] (10) NOT NULL,
+[customer_firstname] [varchar] (60) NULL,
+[customer_lastname] [varchar] (60) NULL,
+[customer_gender] [varchar] (1) NULL,
+[customer_company_name] [varchar] (60) NULL,
+[customer_street_address] [varchar] (60) NULL,
+[customer_region] [varchar] (60) NULL,
+[customer_country] [varchar] (60) NULL,
+[customer_email] [varchar] (60)  NULL,
+[customer_telephone] [varchar] (60) NULL,
+[customer_zipcode] [varchar] (60) NULL,
+[credit_card_type_id] [varchar] (2) NULL,
+[customer_credit_card_number] [varchar] (60) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -187,11 +187,11 @@ PRINT N'Creating [dbo].[DM_CUSTOMER_NOTES]'
 GO
 CREATE TABLE [dbo].[DM_CUSTOMER_NOTES]
 (
-[customer_id] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
-[customer_firstname] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
-[customer_lastname] [varchar] (60) COLLATE Latin1_General_CI_AS NULL,
+[customer_id] [varchar] (10) NOT NULL,
+[customer_firstname] [varchar] (60) NULL,
+[customer_lastname] [varchar] (60) NULL,
 [customer_notes_entry_date] [datetime] NOT NULL,
-[customer_note] [varchar] (2000) COLLATE Latin1_General_CI_AS NULL
+[customer_note] [varchar] (2000) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -206,8 +206,8 @@ PRINT N'Creating [dbo].[DM_CREDIT_CARD_TYPE]'
 GO
 CREATE TABLE [dbo].[DM_CREDIT_CARD_TYPE]
 (
-[credit_card_type_id] [varchar] (2) COLLATE Latin1_General_CI_AS NOT NULL,
-[credit_card_type_name] [varchar] (60) COLLATE Latin1_General_CI_AS NULL
+[credit_card_type_id] [varchar] (2) NOT NULL,
+[credit_card_type_name] [varchar] (60) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -222,9 +222,9 @@ PRINT N'Creating [dbo].[DM_INVOICE]'
 GO
 CREATE TABLE [dbo].[DM_INVOICE]
 (
-[invoice_number] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
+[invoice_number] [varchar] (10) NOT NULL,
 [invoice_date] [datetime] NULL,
-[invoice_customer_id] [varchar] (60) COLLATE Latin1_General_CI_AS NULL
+[invoice_customer_id] [varchar] (60) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -239,8 +239,8 @@ PRINT N'Creating [dbo].[DM_INVENTORY_ITEM]'
 GO
 CREATE TABLE [dbo].[DM_INVENTORY_ITEM]
 (
-[inventory_item_id] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
-[inventory_item_name] [varchar] (60) COLLATE Latin1_General_CI_AS NULL
+[inventory_item_id] [varchar] (10) NOT NULL,
+[inventory_item_name] [varchar] (60) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -257,9 +257,9 @@ CREATE TABLE [dbo].[DM_ASSIGNMENT]
 (
 [assignment_id] [int] NOT NULL,
 [person_id] [int] NOT NULL,
-[emp_id] [varchar] (10) COLLATE Latin1_General_CI_AS NULL,
-[emp_jobtitle] [varchar] (100) COLLATE Latin1_General_CI_AS NULL,
-[assignment_notes] [varchar] (1000) COLLATE Latin1_General_CI_AS NULL
+[emp_id] [varchar] (10) NULL,
+[emp_jobtitle] [varchar] (100) NULL,
+[assignment_notes] [varchar] (1000) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
@@ -274,7 +274,7 @@ PRINT N'Creating [dbo].[DM_CUSTOMER_ASXML_IDAttr]'
 GO
 CREATE TABLE [dbo].[DM_CUSTOMER_ASXML_IDAttr]
 (
-[customer_id] [varchar] (10) COLLATE Latin1_General_CI_AS NOT NULL,
+[customer_id] [varchar] (10) NOT NULL,
 [customer_data] [xml] NULL
 )
 GO
@@ -307,7 +307,7 @@ GO
 CREATE TABLE [dbo].[DM_SUPPLIERS]
 (
 [supplier_id] [int] NOT NULL,
-[supplier_name] [varchar] (60) COLLATE Latin1_General_CI_AS NULL
+[supplier_name] [varchar] (60) NULL
 )
 GO
 IF @@ERROR <> 0 SET NOEXEC ON
